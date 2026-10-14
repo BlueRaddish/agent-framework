@@ -1,0 +1,28 @@
+diff --git a/python/packages/core/agent_framework/_types.py b/python/packages/core/agent_framework/_types.py
+index 6ffebae870063bc932d3fd1f426d12dfd7ad0cbb..7d11fa9e39ea27491755f20807d49080ba61c83e 100644
+--- a/python/packages/core/agent_framework/_types.py
++++ b/python/packages/core/agent_framework/_types.py
+@@ -3003,9 +3003,9 @@ class ChatResponse(SerializationMixin, Generic[ResponseModelT]):
+         Example:
+             .. code-block:: python
+ 
+-                from agent_framework import ChatResponse
++                from agent_framework import ChatResponse, Message
+ 
+-                response = ChatResponse.from_updates(updates)
++                response = ChatResponse(messages=[Message("assistant", ["Hello"])])
+                 assert response.text == ChatResponse.from_updates(response.to_updates()).text
+         """
+         updates = [
+@@ -3487,9 +3487,9 @@ class AgentResponse(SerializationMixin, Generic[ResponseModelT]):
+         Example:
+             .. code-block:: python
+ 
+-                from agent_framework import AgentResponse
++                from agent_framework import AgentResponse, Message
+ 
+-                response = AgentResponse.from_updates(updates)
++                response = AgentResponse(messages=[Message("assistant", ["Hello"])])
+                 assert response.text == AgentResponse.from_updates(response.to_updates()).text
+         """
+         updates = [

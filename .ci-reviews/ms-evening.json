@@ -1,0 +1,93 @@
+{
+  "scope_id": "ms-evening",
+  "repo": "microsoft/agent-framework",
+  "cwd": "C:\\Users\\there\\codex\\contributions\\oct13-evening-ms",
+  "base": "1b9879c58ac950ef235471209b4c5cb402972bab",
+  "branch": "fix/oct13-evening-ms",
+  "files": [
+    "python/packages/core/agent_framework/_types.py"
+  ],
+  "title": "Python: Make response-to-updates examples self-contained",
+  "personal_review_required": true,
+  "dco_required": false,
+  "patch_file": "C:\\Users\\there\\codex\\open-source-contributions\\evidence\\oct13-evening-ms-evening-review-v4.patch",
+  "patch_sha256": "2cfebdd1e5e3f1a2da8715dda633bf52c706da24b19d070d06f77cd92f98bc7c",
+  "source_proof": {
+    "python/packages/core/agent_framework/_types.py": {
+      "working_sha256": "fbb68bf2a623dfcc5f77e6f1df5511d9f72c367f01e2569a6a7d089936b8d6c2",
+      "canonical_LF_sha256": "fbb68bf2a623dfcc5f77e6f1df5511d9f72c367f01e2569a6a7d089936b8d6c2",
+      "target_git_blob": "7d11fa9e39ea27491755f20807d49080ba61c83e"
+    }
+  },
+  "base_blobs": {
+    "python/packages/core/agent_framework/_types.py": "6ffebae870063bc932d3fd1f426d12dfd7ad0cbb"
+  },
+  "test_state": "not run locally; actual baseline and green public-runner validation pending",
+  "hooks_state": "not run locally; normal scoped repository hooks pending",
+  "public_mutations": [],
+  "source_commits": [],
+  "patch_name": "ms-evening.patch",
+  "config_sha256": {
+    "python/pyproject.toml": "451dfea4a8d513300ae28e56e8b9583398b38d71169815f38f107eee01d6eb53",
+    "python/uv.lock": "1bcad281667069b5ac9c117038bb5724fc1022523b1299709eea6182f75c7eb3",
+    "python/.pre-commit-config.yaml": "e0e53a749c77d9747abeb15693162460f078ced8571da9918c9e8231549eff2b",
+    "python/packages/core/pyproject.toml": "992da7d7d749cf92f66d71e16b8400c813ebd3ece616b679f9123b5e32b73ff0"
+  },
+  "base_source": {
+    "python/packages/core/agent_framework/_types.py": {
+      "canonical_LF_sha256": "59d1961a0be3130532a4cb0bbd7b7ab93087afc0bcce92462bcdba729cf03a48",
+      "target_git_blob": "6ffebae870063bc932d3fd1f426d12dfd7ad0cbb"
+    }
+  },
+  "commit_date": "2026-10-14T03:55:07+0000",
+  "resolution_cutoff": "2026-10-07T03:55:07.147353+00:00",
+  "test_commands": [
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "python",
+      "../../.ci-reviews/_mm_verify_consumers.py",
+      "--scope",
+      "ms-evening",
+      "--source",
+      "..",
+      "--response-type",
+      "chat",
+      "--mode",
+      "example"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "python",
+      "../../.ci-reviews/_mm_verify_consumers.py",
+      "--scope",
+      "ms-evening",
+      "--source",
+      "..",
+      "--response-type",
+      "agent",
+      "--mode",
+      "example"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "pytest",
+      "packages/core/tests/core/test_types.py",
+      "-m",
+      "not integration",
+      "-q",
+      "--junitxml=../../proof/ms-owning.xml"
+    ]
+  ],
+  "personal_remote_job_required": true,
+  "initial_source_commit_permitted": true,
+  "issue_readiness": "N/A - trivial self-contained documentation example correction"
+}
