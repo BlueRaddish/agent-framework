@@ -1,0 +1,53 @@
+name: Oct17 URI documentation validation
+on:
+  push:
+    branches: ['ci/oct17-mm-ms-uri-validation-v2']
+permissions:
+  contents: read
+jobs:
+  source-validation:
+    name: source-validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/agent-framework
+          ref: 44fe223da7ea6853eefb7053e25c2c213a2e5c15
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.1'
+          enable-cache: false
+      - name: Execute frozen source-validation
+        run: python .ci-reviews/_mm_validation.py --scope ms-oct17-uri --phase source-validation --source source
+  user-verification-ms-oct17-uri:
+    name: user-verification-ms-oct17-uri
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/agent-framework
+          ref: 44fe223da7ea6853eefb7053e25c2c213a2e5c15
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.1'
+          enable-cache: false
+      - name: Execute frozen personal-verification
+        run: python .ci-reviews/_mm_validation.py --scope ms-oct17-uri --phase personal-verification --source source

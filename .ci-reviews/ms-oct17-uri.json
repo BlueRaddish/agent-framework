@@ -1,0 +1,89 @@
+{
+  "scope_id": "ms-oct17-uri",
+  "repo": "microsoft/agent-framework",
+  "cwd": "C:\\Users\\there\\codex\\contributions\\oct17-mm-ms",
+  "base": "44fe223da7ea6853eefb7053e25c2c213a2e5c15",
+  "branch": "fix/oct17-mm-ms",
+  "title": "Python: Make the URI content example runnable",
+  "files": [
+    "python/packages/core/agent_framework/_types.py"
+  ],
+  "patch_name": "ms-oct17-uri.patch",
+  "patch_sha256": "11ab407b921fe093d77eaeb7055884fc1f675baaeead88af6f79107f80db4bb6",
+  "source_proof": {
+    "python/packages/core/agent_framework/_types.py": {
+      "canonical_LF_sha256": "1b572f5ec7261fdec84fadc25a93256ff8ce04b8b4b8ef4f8ba3e28105561e32",
+      "target_git_blob": "09e2a353144eaa820a523517e759728d9498816c"
+    }
+  },
+  "base_source": {
+    "python/packages/core/agent_framework/_types.py": {
+      "canonical_LF_sha256": "60755f04ac6e080df555be94ae90a69ddac48645295a0aaa3caf3278b8181f58",
+      "target_git_blob": "3106e91ba40a51bb7971199f70cc8c62e8e22e2e"
+    }
+  },
+  "config_sha256": {
+    "python/pyproject.toml": "7a5479e18e011e253b0b6c40e67159671e131d1cf618fd5970e7f67e018edec0",
+    "python/uv.lock": "1409de6b5b058b495601b1b8c17eae718d763febd0443da44f13f2fab255bf7f",
+    "python/.pre-commit-config.yaml": "785c5375898b0458e3f1c63bb8c6ad8fce3793397a71a19b04fcc089958b19e2",
+    "python/packages/core/pyproject.toml": "1ec217ed431c06dcedcdeec5252aa97b23621ab8ad2ed4111673ca8d0c1e4b5b"
+  },
+  "commit_date": "2026-10-17T07:30:33+0000",
+  "personal_remote_job_required": true,
+  "initial_source_commit_permitted": true,
+  "runtime_AST_unchanged": true,
+  "test_commands": [
+    [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "3.10",
+      "python",
+      "../../.ci-reviews/_mm_verify_syntax.py",
+      "--source",
+      "..",
+      "--mode",
+      "example"
+    ],
+    [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "3.11",
+      "python",
+      "../../.ci-reviews/_mm_verify_syntax.py",
+      "--source",
+      "..",
+      "--mode",
+      "example"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "python",
+      "../../.ci-reviews/_mm_verify_consumers.py",
+      "--scope",
+      "ms-oct17-uri",
+      "--source",
+      "..",
+      "--mode",
+      "example"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "pytest",
+      "packages/core/tests/core/test_types.py",
+      "-m",
+      "not integration",
+      "-q",
+      "--junitxml=../../proof/ms-owning.xml"
+    ]
+  ]
+}
