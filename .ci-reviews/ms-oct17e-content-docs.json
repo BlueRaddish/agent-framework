@@ -1,0 +1,87 @@
+{
+  "scope_id": "ms-oct17e-content-docs",
+  "repo": "microsoft/agent-framework",
+  "source_checkout_repo": "BlueRaddish/agent-framework",
+  "existing_PR": 9467,
+  "base": "44fe223da7ea6853eefb7053e25c2c213a2e5c15",
+  "start_head": "1de72302f3d50830c73d294cd3b3fce86ef0f246",
+  "native_parent": "1de72302f3d50830c73d294cd3b3fce86ef0f246",
+  "branch": "fix/oct17-mm-ms",
+  "local_branch": "fix/oct17e-mm-ms",
+  "title": "Python: Make Content base64 documentation examples runnable",
+  "files": [
+    "python/packages/core/agent_framework/_types.py"
+  ],
+  "patch_name": "ms-oct17e-content-docs.patch",
+  "patch_sha256": "8c28e6bc45f189a6d2d47079e61a32383edd19f660635cc6b74059a7b20e961e",
+  "apply_patch_name": "append.patch",
+  "append_patch_sha256": "3589701f3e2889da2b28107ce97f726a339dde645d804a30bb56aa628bdd6064",
+  "old_reviewed_patch_sha256": "11ab407b921fe093d77eaeb7055884fc1f675baaeead88af6f79107f80db4bb6",
+  "start_source": {
+    "python/packages/core/agent_framework/_types.py": {
+      "sha256": "1b572f5ec7261fdec84fadc25a93256ff8ce04b8b4b8ef4f8ba3e28105561e32",
+      "blob": "09e2a353144eaa820a523517e759728d9498816c"
+    }
+  },
+  "final_source": {
+    "python/packages/core/agent_framework/_types.py": {
+      "sha256": "0f16d668cd116b6b52ab319e86ef82244b51f310296052c9f98f8884bf4db119",
+      "blob": "a49b1134654b6eb9d914d165efab478dc9beaf2e"
+    }
+  },
+  "config_sha256": {
+    "python/pyproject.toml": "7a5479e18e011e253b0b6c40e67159671e131d1cf618fd5970e7f67e018edec0",
+    "python/uv.lock": "1409de6b5b058b495601b1b8c17eae718d763febd0443da44f13f2fab255bf7f",
+    "python/.pre-commit-config.yaml": "785c5375898b0458e3f1c63bb8c6ad8fce3793397a71a19b04fcc089958b19e2",
+    "python/packages/core/pyproject.toml": "1ec217ed431c06dcedcdeec5252aa97b23621ab8ad2ed4111673ca8d0c1e4b5b"
+  },
+  "commit_date": "2026-10-18T02:24:05+0000",
+  "runtime_AST_unchanged": true,
+  "fresh_exact_personal_review_and_user_test_required": true,
+  "test_commands": [
+    [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "3.10",
+      "../../.ci-reviews/_ms_syntax.py",
+      "--source",
+      ".."
+    ],
+    [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "3.11",
+      "../../.ci-reviews/_ms_syntax.py",
+      "--source",
+      ".."
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "python",
+      "../../.ci-reviews/_ms_consumers.py",
+      "--source",
+      "..",
+      "--mode",
+      "example"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "pytest",
+      "packages/core/tests/core/test_types.py",
+      "-m",
+      "not integration",
+      "-q",
+      "--junitxml=../../proof/ms-owning.xml"
+    ]
+  ]
+}

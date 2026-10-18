@@ -1,0 +1,55 @@
+name: Oct17 evening Content documentation verification
+on:
+  push:
+    branches: ['ci/oct17e-mm-ms-content-docs-v2']
+permissions:
+  contents: read
+jobs:
+  source-validation:
+    name: source-validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: BlueRaddish/agent-framework
+          ref: 1de72302f3d50830c73d294cd3b3fce86ef0f246
+          fetch-depth: 2
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.1'
+          enable-cache: false
+      - name: Execute frozen source-validation
+        run: python .ci-reviews/_ms_validation.py --phase source-validation --source source
+  user-verification-ms-oct17e-content-docs:
+    name: user-verification-ms-oct17e-content-docs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: BlueRaddish/agent-framework
+          ref: 1de72302f3d50830c73d294cd3b3fce86ef0f246
+          fetch-depth: 2
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.1'
+          enable-cache: false
+      - name: Execute frozen personal-verification
+        run: python .ci-reviews/_ms_validation.py --phase personal-verification --source source
