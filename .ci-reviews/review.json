@@ -1,0 +1,71 @@
+{
+  "label": "ms",
+  "scope_id": "ms-oct18e-review9512",
+  "repo": "microsoft/agent-framework",
+  "reviewed_PR": 9512,
+  "head": "daaa995dcd070fbce04a65ac0fefb989a0d4cfc3",
+  "actual_parent": "ebcf4db7f9462ef6c377761e0b3159c4c5a73027",
+  "files": [
+    "python/packages/openai/agent_framework_openai/_embedding_client.py",
+    "python/packages/openai/tests/openai/test_openai_embedding_client.py"
+  ],
+  "production": "python/packages/openai/agent_framework_openai/_embedding_client.py",
+  "module": "agent_framework_openai._embedding_client",
+  "source_sha256": {
+    "python/packages/openai/agent_framework_openai/_embedding_client.py": "1ab0dc0fa07b6500d5fc64f7df6456a4b296ef67c9566a494847f05b8e699b2d",
+    "python/packages/openai/tests/openai/test_openai_embedding_client.py": "0df266320c7e231f7166d536e17b64934d15c205e7ab10d679e94c847f47bdbb",
+    "python/packages/openai/tests/openai/test_openai_embedding_client_azure.py": "126fe1247d7c2abf6c9223b6dbd671e0cf939cf619a3fe4746619bde403d645a"
+  },
+  "config_sha256": {
+    "python/pyproject.toml": "7a5479e18e011e253b0b6c40e67159671e131d1cf618fd5970e7f67e018edec0",
+    "python/uv.lock": "1409de6b5b058b495601b1b8c17eae718d763febd0443da44f13f2fab255bf7f",
+    "python/.pre-commit-config.yaml": "785c5375898b0458e3f1c63bb8c6ad8fce3793397a71a19b04fcc089958b19e2",
+    "python/packages/openai/pyproject.toml": "c70fef493ebf57d5927766b62f2afe9e2e71f1403182ad1e111aca3ecdf24c8d"
+  },
+  "baseline_source_sha256": "ce7ab039e53415c7fe0e65c4fe67dd27801d83f9d969b1565aba6d51dc268e6a",
+  "baseline_expected": {
+    "tests": 12,
+    "failures": 7
+  },
+  "failed_name_contains": "test_misaligned_response_names_actual_input_index_and_byte_count",
+  "failed_message_contains": "struct.error",
+  "owning_tests": {
+    "embedding_owners": [
+      "packages/openai/tests/openai/test_openai_embedding_client.py",
+      "packages/openai/tests/openai/test_openai_embedding_client_azure.py",
+      "-m",
+      "not integration"
+    ]
+  },
+  "owning_minimum": {
+    "embedding_owners": 31
+  },
+  "new_source_patch_or_commit": false,
+  "fresh_exact_personal_review_and_user_test_required": true,
+  "reviewed_patch_sha256": "0d6020fe2a96b6fdc7609400852ac6128c7210c28225df656d8f63c0aff3744c",
+  "test_commands": [
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "pytest",
+      "../../.ci-reviews/_probe.py",
+      "-q",
+      "--junitxml=../../proof/fixed.xml"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "pytest",
+      "packages/openai/tests/openai/test_openai_embedding_client.py",
+      "packages/openai/tests/openai/test_openai_embedding_client_azure.py",
+      "-m",
+      "not integration",
+      "-q",
+      "--junitxml=../../proof/embedding_owners.xml"
+    ]
+  ]
+}

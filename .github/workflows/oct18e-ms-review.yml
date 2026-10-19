@@ -1,0 +1,33 @@
+name: Oct18 evening independent MS PR9512 review
+on:
+  push:
+    branches: ['ci/oct18e-mm-ms-review9512-personal-template']
+permissions:
+  contents: read
+jobs:
+  review-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      DO_NOT_TRACK: '1'
+      MLFLOW_ENABLE_TELEMETRY: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/agent-framework
+          ref: daaa995dcd070fbce04a65ac0fefb989a0d4cfc3
+          fetch-depth: 2
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.1'
+          enable-cache: false
+      - name: Automatic personal-route template only; never user credit
+        run: python .ci-reviews/_review.py --source source --phase personal-verification
