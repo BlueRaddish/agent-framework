@@ -1,0 +1,34 @@
+{
+  "person": {
+    "name": "Jeeho Lee",
+    "email": "jeeholife2@gmail.com",
+    "date": "2026-10-23T04:02:54.912301+00:00"
+  },
+  "targets": {
+    "cmux": {
+      "repo": "manaflow-ai/cmux",
+      "number": 21901,
+      "head": "ba76ce78254869687da799963fbd21805904f33b",
+      "main": "a84b7c278b5444820cff5b1f67addcf980f02b90",
+      "base": "5da8121f9c71386221c88f74ca3256060c84b372",
+      "depth": 400,
+      "files": [
+        "cmux-tui/bindings/python/cmux/_protocol.py",
+        "cmux-tui/bindings/python/tests/test_resource_api.py"
+      ]
+    },
+    "vllm": {
+      "repo": "vllm-project/vllm",
+      "number": 60510,
+      "head": "adee1ecd28c7a666e01e8b93e84274a3a9081816",
+      "main": "284c0317c486fc605b915a39a540053ec3a1b59f",
+      "base": "b49c921a27083c25c16f308be1326055dbc87bbf",
+      "depth": 1800,
+      "files": [
+        "docs/benchmarking/sweeps.md",
+        "tests/benchmarks/test_plot_filters.py",
+        "vllm/benchmarks/sweep/plot.py"
+      ]
+    }
+  }
+}
