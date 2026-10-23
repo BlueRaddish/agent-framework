@@ -1,0 +1,35 @@
+name: October22 vLLM PR diff integration
+on:
+  push:
+    branches: [ci/oct22-vc-vllm-v3]
+permissions:
+  contents: read
+jobs:
+  integration:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [vllm]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Exact source integration and real consuming checks
+        run: python3 validation/controller.py ${{ matrix.target }}
+      - name: Retain actual result on failure
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, json
+          p=Path('/tmp/oct22-${{ matrix.target }}-proof/result.json')
+          if p.exists():
+              raw=p.read_bytes()
+              assert len(raw)<=8*1024**2
+              chunks=[raw[i:i+24576] for i in range(0,len(raw),24576)]
+              print('OCT22_FINAL_META='+json.dumps({'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'chunks':len(chunks)}))
+              for index,chunk in enumerate(chunks):
+                  print('OCT22_FINAL_CHUNK='+json.dumps({'index':index,'total':len(chunks),'data':base64.b64encode(chunk).decode()}))
+          PY
