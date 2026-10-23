@@ -1,0 +1,51 @@
+name: October22 response overview documentation checks
+on:
+  push:
+    branches: ['ci/oct22-mm-ms-response-docs-v3']
+permissions:
+  contents: read
+jobs:
+  source-validation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/agent-framework
+          ref: a8e284ca8ce7c2a6b4a4641ef35e131d75a5cda3
+          fetch-depth: 1
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.5'
+          enable-cache: false
+      - run: python .ci-reviews/verify.py --source source --phase source
+  user-verification-ms-oct22-response-docs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/agent-framework
+          ref: a8e284ca8ce7c2a6b4a4641ef35e131d75a5cda3
+          fetch-depth: 1
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.5'
+          enable-cache: false
+      - run: python .ci-reviews/verify.py --source source --phase personal
