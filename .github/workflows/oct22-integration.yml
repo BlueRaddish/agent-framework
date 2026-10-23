@@ -1,0 +1,28 @@
+name: October22 cmux explicit remote integration
+on:
+  push:
+    branches: [ci/oct22-vc-cmux-v2]
+permissions:
+  contents: read
+jobs:
+  integration:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [cmux]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Exact source integration and real consuming checks
+        run: python3 validation/controller.py ${{ matrix.target }}
+      - name: Retain actual result on failure
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('/tmp/oct22-${{ matrix.target }}-proof/result.json')
+          if p.exists(): print('OCT22_FINAL='+p.read_text().replace('\n',''))
+          PY
