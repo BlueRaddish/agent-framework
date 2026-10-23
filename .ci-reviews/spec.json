@@ -1,0 +1,72 @@
+{
+  "scope_id": "ms-oct22-response-docs",
+  "repo": "microsoft/agent-framework",
+  "base": "a8e284ca8ce7c2a6b4a4641ef35e131d75a5cda3",
+  "branch": "fix/oct22-mm-response-docs",
+  "title": "Python: Make response overview examples runnable",
+  "files": [
+    "python/packages/core/agent_framework/_types.py"
+  ],
+  "production": "python/packages/core/agent_framework/_types.py",
+  "patch_sha256": "9c6209598cb7741b020f36f8d7890e93be4be3c619367106b5221fb33fe055f8",
+  "before_sha256": "627c82822670e60007ba3323810a2ba1dca65b58e95ae683035771219d96e297",
+  "after_sha256": "de07453aa7cee93c19a242ac55a2cec0bac777a9a6357cddbc4e972a33c93448",
+  "runtime_AST_unchanged": true,
+  "config_sha256": {
+    "python/pyproject.toml": "5e39f282c512615b1322ccbdc60f0c631078d2c5e766032ab29be20f283a8f3d",
+    "python/uv.lock": "98944f3a9a9ea9180778b2184429a746e9f426cded1ad9aa510bbce3e769aa97",
+    "python/.pre-commit-config.yaml": "442f3355bdae9654b1e00fe901a0350d887e634dbb0f44f62b9c64ffd9016450",
+    "python/packages/core/pyproject.toml": "a513efdb6ebcafe8875a82ab5333971e7b8e1d8bd91a33bd1d409e54dcf836b3"
+  },
+  "commit_date": "2026-10-23T04:09:22+0000",
+  "test_commands": [
+    [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "3.10",
+      "../../.ci-reviews/consumer.py",
+      "--source",
+      "..",
+      "--phase",
+      "syntax"
+    ],
+    [
+      "uv",
+      "run",
+      "--no-project",
+      "--python",
+      "3.11",
+      "../../.ci-reviews/consumer.py",
+      "--source",
+      "..",
+      "--phase",
+      "syntax"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "python",
+      "../../.ci-reviews/consumer.py",
+      "--source",
+      "..",
+      "--phase",
+      "fixed"
+    ],
+    [
+      "uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "pytest",
+      "packages/core/tests/core/test_types.py",
+      "-m",
+      "not integration",
+      "-q",
+      "--junitxml=../../proof/ms-owners.xml"
+    ]
+  ]
+}
