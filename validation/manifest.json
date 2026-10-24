@@ -1,0 +1,18 @@
+{
+  "repo": "manaflow-ai/cmux",
+  "number": 24520,
+  "head": "b4bb6168ca73d1574002c128e9cb0f4cdd125af9",
+  "head_parents": [
+    "f51e3bcf40896296527c9d65a45d6bdd6b8285cd",
+    "10e1780d634f3c4cd911df8b9da1be93790d972f"
+  ],
+  "baseline": "10e1780d634f3c4cd911df8b9da1be93790d972f",
+  "test_file": "workers/ci-artifacts/test/consumer-workflow.test.mjs",
+  "source_sha256": {
+    "workers/ci-artifacts/test/consumer-workflow.test.mjs": "29fe330f145adf7bfd2c9c39c5c0085f89fc2332093cd7aa2f67202b45965f1b",
+    ".github/workflows/ci-macos.yml": "b7562de94b28b6c02a857b998dd98609eabf138c663d2ae66a8bc147a2bc7024",
+    "workers/ci-artifacts/package.json": "40f08bdeb7047f9a7756355a72fa2d751777a98abf92271fabcd95a4e6654858",
+    "workers/ci-artifacts/package-lock.json": "bf07e52c580ab1972e3b1a1252fec3fa2a55c46755ab105eb3f98a3881e35bd2"
+  },
+  "baseline_test_sha256": "66e517ded222f3549b05954abaaa50d44a375a5c0dc039f86d107ed3d1f878c7"
+}
