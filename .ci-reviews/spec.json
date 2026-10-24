@@ -1,0 +1,67 @@
+{
+  "scope_id": "oct23-mm-existing-author-reviews",
+  "sources": {
+    "ms": {
+      "repo": "microsoft/agent-framework",
+      "number": 9664,
+      "head": "532e37bc2932764c303f0ac335d1ec1744f99151",
+      "comparison_base": "9c8a3514a15a702f81bfda456d80c7ccaa4d2712",
+      "files": [
+        "python/packages/core/agent_framework/_types.py",
+        "python/packages/core/tests/core/test_types.py"
+      ],
+      "production": [
+        "python/packages/core/agent_framework/_types.py"
+      ],
+      "source_sha256": {
+        "python/packages/core/agent_framework/_types.py": "2cc4ed8c4d63d90274f98ce63be3d6570a707456bfcaf88a91097d94b45da73e",
+        "python/packages/core/tests/core/test_types.py": "fb1c4053141d52ae831aacd9a36df8ad41f1345e315d688c0f77ff59c9f3c0a0"
+      },
+      "baseline_sha256": {
+        "python/packages/core/agent_framework/_types.py": "627c82822670e60007ba3323810a2ba1dca65b58e95ae683035771219d96e297"
+      },
+      "config_sha256": {
+        "python/pyproject.toml": "5e39f282c512615b1322ccbdc60f0c631078d2c5e766032ab29be20f283a8f3d",
+        "python/uv.lock": "98944f3a9a9ea9180778b2184429a746e9f426cded1ad9aa510bbce3e769aa97",
+        "python/.pre-commit-config.yaml": "442f3355bdae9654b1e00fe901a0350d887e634dbb0f44f62b9c64ffd9016450"
+      },
+      "expectations": {
+        "tests": 12,
+        "failures": 8
+      }
+    },
+    "ml": {
+      "repo": "mlflow/mlflow",
+      "number": 27057,
+      "head": "4fbdb4b3f2534de6c3da77fe85ecb9f11d59e846",
+      "comparison_base": "fb390a5139f08b00999296e7a9059d255054969c",
+      "files": [
+        "mlflow/tracking/client.py",
+        "mlflow/tracking/fluent.py",
+        "tests/tracking/test_tracking.py"
+      ],
+      "production": [
+        "mlflow/tracking/client.py",
+        "mlflow/tracking/fluent.py"
+      ],
+      "source_sha256": {
+        "mlflow/tracking/client.py": "f8c76d1549a79ad1848dc9ed8572057d1f43dce8ecf78a5d50b8d43fec8f61f5",
+        "mlflow/tracking/fluent.py": "2223e1e47be14291d98482cd6d785c89662a51a0c6e39aff2b52b5ca3369f4c4",
+        "tests/tracking/test_tracking.py": "aecdef1fcb2ac32d48ad4d21803c489d90066c19c68c90ebe4f7efa5066fe103"
+      },
+      "baseline_sha256": {
+        "mlflow/tracking/client.py": "f41f5f06f57f329171f3084453a745d7009f2ec6fff531320a66f7fd3e1bf47c",
+        "mlflow/tracking/fluent.py": "4df7f05309eb8a08fabcd797efd0070d593bfb4e616b3982f3b251c079cb3597"
+      },
+      "config_sha256": {
+        "pyproject.toml": "9c1ea6e7e71057069377bd8e706202a64b24166a9eacc4af9f34384068e84935",
+        "uv.lock": "59309c527e941d0e0a6a8fdb4b2cd2482d6df2be142847a1a9b5b0794ca98e85",
+        ".pre-commit-config.yaml": "26b4041b502f2c8ce009a05d60ff04f142def1d0df4a62e864c6b45c733c3bc8"
+      },
+      "expectations": {
+        "tests": 6,
+        "failures": 4
+      }
+    }
+  }
+}

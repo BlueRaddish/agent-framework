@@ -1,0 +1,33 @@
+name: October23 MLflow owning tests and normal hooks
+on:
+  push:
+    branches: ['ci/oct23-mm-ml-quality-v3']
+permissions:
+  contents: read
+jobs:
+  ml-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      DO_NOT_TRACK: '1'
+      MLFLOW_ENABLE_TELEMETRY: 'false'
+      MLFLOW_UV_AUTO_DETECT: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: mlflow/mlflow
+          ref: 4fbdb4b3f2534de6c3da77fe85ecb9f11d59e846
+          fetch-depth: 1
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.5'
+          enable-cache: false
+      - run: python .ci-reviews/verify.py --source source --scope ml
