@@ -1,0 +1,29 @@
+{
+  "repo": "vllm-project/vllm",
+  "number": 62215,
+  "head": "545b47d36795f0ceee6c037051d47e9feae51a07",
+  "baseline": "255f14599ec0544c35539414810abdfa7e4e1c86",
+  "head_parents": [
+    "fb5d03d6044aeecbcdb979d96edc17b84f7e0340",
+    "255f14599ec0544c35539414810abdfa7e4e1c86"
+  ],
+  "production": "vllm/utils/argparse_utils.py",
+  "test_module": "tests/utils_/test_argparse_utils.py",
+  "files": [
+    "vllm/utils/argparse_utils.py",
+    "tests/utils_/test_argparse_utils.py"
+  ],
+  "source_sha256": {
+    "vllm/utils/argparse_utils.py": "d7f0d03a37dad15abe333d4c84d1804a733f2dc34390bb17c86b650e3a29d8dc",
+    "tests/utils_/test_argparse_utils.py": "3b91f738801ed12764daafe4661a26daef7b4999c86f0a240c59e007335d0d69",
+    ".pre-commit-config.yaml": "c1cb0cd3d38208d8abde0a567f1e6f401d36cb0049b3170ee481456c529dc551",
+    "pyproject.toml": "1527725d5e4d65a780d13646e1eb97531ad9fc18c6d575708e42eaaa232e5747",
+    "setup.py": "60cdf6542520641adef46415658aa2167341fd03801e0e565c6078613bbbd1f1",
+    "tests/conftest.py": "89d56be0e67e6fa04babe567ab4168d1d6dc08224569f611891b4b53a1d63149",
+    "requirements/cpu.txt": "c768f765dd34629013eeeaf1af749e1d9c75516d4943d4da65ab342f7b6eab2f",
+    "requirements/build/cpu.txt": "301fcb9f2fa8088765b7a6cfbac4643280ef51658ced794e991bec62ba490d47",
+    "requirements/lint.txt": "86866422f67715efa1f81a6aca12827de773f02b7f0a969f8a37b8ce5f95f75a",
+    "requirements/common.txt": "366cb94fae6ea961da1e7d1c855f6316c3897b5ce9a839017db2bbebb668055a"
+  },
+  "baseline_sha256": "f0ad2c5e6bac21e3b7369bcc92efcca624afd345e319d9fb367d8efbe72fbf71"
+}
