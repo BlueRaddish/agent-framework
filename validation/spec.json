@@ -1,0 +1,59 @@
+{
+  "adk": {
+    "repo": "google/adk-python",
+    "PR": 7691,
+    "head": "4197c69f16293d2c1b41aafb9a5063da86d42867",
+    "base": "c31856d17ab54d82dbe89b4e511d34395ffc977b",
+    "files": [
+      "src/google/adk/memory/_sqlite_memory_service.py",
+      "tests/unittests/memory/test_sqlite_memory_service.py",
+      "tests/unittests/tools/test_load_memory_tool.py"
+    ],
+    "production": [
+      "src/google/adk/memory/_sqlite_memory_service.py"
+    ],
+    "source_sha256": {
+      "src/google/adk/memory/_sqlite_memory_service.py": "e6ff5e7bb5840f649d75d73313bdb3ab1e2f1a867435301471d94736364e5723",
+      "tests/unittests/memory/test_sqlite_memory_service.py": "7c5f98945f64544155c66c3883afc29f509082c76c97eb9e619ca3380e9b117c",
+      "tests/unittests/tools/test_load_memory_tool.py": "2b0f15bab1757d2f46dd2ac7cdacdd190cae4ac1ee13253af4d4104f99de2622"
+    },
+    "config_sha256": {
+      "pyproject.toml": "dc4c73161198bce1ff1b42b7e0839505f59223eb8a78c07e990d40b25c58670c",
+      ".pre-commit-config.yaml": "c7d94b14a12db526d84110ffd762c91f0ba863bbc69413b09931857abd5ce149",
+      "tox.ini": "7eec9b6b133fc752f30a444e42d67689a38a1df08bfb8cb9ce49f28e30b6bfbf"
+    }
+  },
+  "oh": {
+    "repo": "OpenHands/software-agent-sdk",
+    "PR": 6109,
+    "head": "da5fd3b16cadd9ada53cdd1289443cb792036145",
+    "base": "2cb54835a9bb7bcf3b9e4487d2b18438f62c2f03",
+    "files": [
+      "openhands-sdk/openhands/sdk/conversation/impl/local_conversation.py",
+      "openhands-sdk/openhands/sdk/llm/llm_profile_store.py",
+      "openhands-sdk/openhands/sdk/profiles/agent_profile_store.py",
+      "tests/sdk/conversation/local/test_client_tools_persistence.py"
+    ],
+    "production": [
+      "openhands-sdk/openhands/sdk/conversation/impl/local_conversation.py",
+      "openhands-sdk/openhands/sdk/llm/llm_profile_store.py",
+      "openhands-sdk/openhands/sdk/profiles/agent_profile_store.py"
+    ],
+    "source_sha256": {
+      "openhands-sdk/openhands/sdk/conversation/impl/local_conversation.py": "452dea0915b7b44e373e19460766f7950e2a32d4e218bc9f88ebb6cfe91857d5",
+      "openhands-sdk/openhands/sdk/llm/llm_profile_store.py": "8b196a73818e31b145dab2c1fa5b1d046f3c6b311f6160efe855569fe86d605b",
+      "openhands-sdk/openhands/sdk/profiles/agent_profile_store.py": "86478a7a14b6bd38985b5f133a2230cc9c44d2f4ad9a42c2c36528884c747aca",
+      "tests/sdk/conversation/local/test_client_tools_persistence.py": "f2a19882f3a70a843d1170687382ab41b11264e3e819c1a73ed660e89b5bda48"
+    },
+    "config_sha256": {
+      "pyproject.toml": "e461d50436dfa92ac04f02b441baa09916bc8c6a6580a07b48698e668957b0eb",
+      ".pre-commit-config.yaml": "724795ee85e39218f58912a2fb2b02576ec950aa9b7115210fc2927eaa05f15b",
+      "uv.lock": "58c8b04e867891f3d7671bb0c34e459d5de5fa61fb25e3c10f63ec57b1bdd02e"
+    }
+  },
+  "person": {
+    "name": "Jeeho Lee",
+    "email": "jeeholife2@gmail.com",
+    "date": "2026-10-24T05:23:12Z"
+  }
+}

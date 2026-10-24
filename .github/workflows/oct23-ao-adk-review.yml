@@ -1,0 +1,41 @@
+name: Independent ADK SQLite and SDK persistence review
+on:
+  push:
+    branches: [ci/oct23-ao-adk-review-v2]
+permissions:
+  contents: read
+jobs:
+  adk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: '1'
+      PYTHONCOERCECLOCALE: '0'
+      DO_NOT_TRACK: '1'
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          path: runner-control
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78
+        with:
+          version: '0.12.23'
+          enable-cache: false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          repository: google/adk-python
+          ref: 4197c69f16293d2c1b41aafb9a5063da86d42867
+          fetch-depth: 2
+          path: source
+          persist-credentials: false
+      - name: Frozen actual consumers, before-and-after and owning suites
+        working-directory: source
+        run: python ../runner-control/validation/verify.py adk
