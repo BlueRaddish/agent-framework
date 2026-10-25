@@ -1,0 +1,34 @@
+name: October25 focused independent review checks
+on:
+  push:
+    branches: [ci/oct25-vc-vllm63469-v2]
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: verify (vllm)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Actual portable consumers
+        run: python3 validation/review_vllm.py
+      - name: Preserve exact bounded result even on failure
+        if: always()
+        env:
+          REVIEW_KIND: vllm
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64,hashlib,json,os
+          kind=os.environ['REVIEW_KIND'];assert kind in ['cmux','vllm']
+          p=Path('/tmp/oct25-vc-'+kind+'-proof/result.json')
+          if p.exists():
+              raw=p.read_bytes();assert len(raw)<=8*1024**2
+              chunks=[raw[i:i+24576]for i in range(0,len(raw),24576)]
+              print('OCT25_FINAL_META='+json.dumps({'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'chunks':len(chunks)}))
+              for index,chunk in enumerate(chunks):
+                  print('OCT25_FINAL_CHUNK='+json.dumps({'index':index,'total':len(chunks),'data':base64.b64encode(chunk).decode()}))
+          PY
