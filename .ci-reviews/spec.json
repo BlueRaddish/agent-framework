@@ -1,0 +1,25 @@
+{
+  "scope_id": "oct25-ms9573-null-wrapper-report",
+  "source": {
+    "repo": "microsoft/agent-framework",
+    "number": 9573,
+    "head": "8c52ac40b720668b6f6e01ad659fdfaa85d060d8",
+    "files": [
+      "python/packages/core/agent_framework/_tools.py",
+      "python/packages/core/tests/core/test_tools.py"
+    ],
+    "source_sha256": {
+      "python/packages/core/agent_framework/_tools.py": "7171b065efee09cd9d2b24407514cda522ff64ade694cf90c114b7599b2e4da5",
+      "python/packages/core/tests/core/test_tools.py": "603baa116d6f0114a6f62bfdf4983208b9e921cb91f559ef9d8673e4d03c7999"
+    },
+    "config_sha256": {
+      "python/pyproject.toml": "7a5479e18e011e253b0b6c40e67159671e131d1cf618fd5970e7f67e018edec0",
+      "python/uv.lock": "1409de6b5b058b495601b1b8c17eae718d763febd0443da44f13f2fab255bf7f",
+      "python/.pre-commit-config.yaml": "785c5375898b0458e3f1c63bb8c6ad8fce3793397a71a19b04fcc089958b19e2"
+    },
+    "expectations": {
+      "tests": 6,
+      "failures": 3
+    }
+  }
+}
