@@ -1,0 +1,29 @@
+name: October25 Microsoft null argument report
+on:
+  push:
+    branches: ['ci/oct25-mm-null-report-v3']
+permissions:
+  contents: read
+jobs:
+  ms-report:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/agent-framework
+          ref: 8c52ac40b720668b6f6e01ad659fdfaa85d060d8
+          fetch-depth: 1
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.1'
+          enable-cache: false
+      - run: python .ci-reviews/verify.py --source source
