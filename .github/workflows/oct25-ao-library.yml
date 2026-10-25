@@ -1,0 +1,118 @@
+name: Requested schema regression and UTF8 review followup
+on:
+  push:
+    branches: [ci/oct25-ao-library-v1]
+permissions:
+  contents: read
+jobs:
+  adk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '3.11'
+            lane: py311
+          - version: '3.12'
+            lane: py312
+          - version: '3.13'
+            lane: py313
+          - version: '3.14'
+            lane: py314
+    env:
+      PYTHON_VERSION: ${{ matrix.version }}
+      TOX_LANE: ${{ matrix.lane }}
+      UV_EXCLUDE_NEWER: '2026-10-25T00:00:00Z'
+      LITELLM_LOCAL_MODEL_COST_MAP: 'True'
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          path: runner-control
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: ${{ matrix.version }}
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78
+        with:
+          version: '0.12.23'
+          enable-cache: false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          repository: google/adk-python
+          ref: 1e0ef6ae2f5e7893f3d643c0d1dcfa1cd28a512e
+          fetch-depth: 0
+          path: source
+          persist-credentials: false
+      - name: Requested six regressions, negative control, owning suites, hooks and full tox
+        working-directory: source
+        run: python ../runner-control/validation/verify.py adk
+  oh-linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: '1'
+      PYTHONCOERCECLOCALE: '0'
+      DO_NOT_TRACK: '1'
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          path: runner-control
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78
+        with:
+          version: '0.12.23'
+          enable-cache: false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          repository: OpenHands/software-agent-sdk
+          ref: f90694fa4d7b20ebaba26e085f6729f156b6df04
+          fetch-depth: 2
+          path: source
+          persist-credentials: false
+      - name: Frozen actual consumers, before-and-after and owning suites
+        working-directory: source
+        run: python ../runner-control/validation/verify.py oh-linux
+  oh-windows:
+    runs-on: windows-2025
+    timeout-minutes: 40
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: '0'
+      PYTHONCOERCECLOCALE: '0'
+      DO_NOT_TRACK: '1'
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          path: runner-control
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78
+        with:
+          version: '0.12.23'
+          enable-cache: false
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          repository: OpenHands/software-agent-sdk
+          ref: f90694fa4d7b20ebaba26e085f6729f156b6df04
+          fetch-depth: 2
+          path: source
+          persist-credentials: false
+      - name: Frozen actual consumers, before-and-after and owning suites
+        working-directory: source
+        run: python ../runner-control/validation/verify.py oh-windows

@@ -1,0 +1,63 @@
+{
+  "adk": {
+    "repo": "google/adk-python",
+    "PR": 7531,
+    "head": "1e0ef6ae2f5e7893f3d643c0d1dcfa1cd28a512e",
+    "baseline": "3b2b949c4b0b2a063b01e838d0fdde4aa93336d7",
+    "files": [
+      "tests/unittests/utils/test_schema_utils.py"
+    ],
+    "production": [
+      "src/google/adk/utils/_schema_utils.py"
+    ],
+    "source_sha256": {
+      "tests/unittests/utils/test_schema_utils.py": "30e914977e9640d9de1e968b3f7b023542740c87784d62c2bd9d5b703feecafd",
+      "src/google/adk/utils/_schema_utils.py": "2ff6a845906e17d5fd898161aebff797d6bc8cd7305b6678ab2dc20d4268dbd7"
+    },
+    "config_sha256": {
+      "pyproject.toml": "3ffba06717576286f871cc7a1198a4b34d066f78fb642e4d8924e1920ca3a13f",
+      ".pre-commit-config.yaml": "c7d94b14a12db526d84110ffd762c91f0ba863bbc69413b09931857abd5ce149",
+      "tox.ini": "7eec9b6b133fc752f30a444e42d67689a38a1df08bfb8cb9ce49f28e30b6bfbf"
+    },
+    "final_test_sha256": "503f0534c183967df6fdbb984c89496a640ab738544d501446d1b4a4484bf742",
+    "base_tree": "dc9dde94eec50f01876067f18bfaa1240e7901dd"
+  },
+  "oh": {
+    "repo": "OpenHands/software-agent-sdk",
+    "PR": 6109,
+    "head": "f90694fa4d7b20ebaba26e085f6729f156b6df04",
+    "baseline": "2cb54835a9bb7bcf3b9e4487d2b18438f62c2f03",
+    "files": [
+      "openhands-sdk/openhands/sdk/conversation/impl/local_conversation.py",
+      "openhands-sdk/openhands/sdk/llm/llm.py",
+      "openhands-sdk/openhands/sdk/llm/llm_profile_store.py",
+      "openhands-sdk/openhands/sdk/profiles/agent_profile_store.py",
+      "tests/sdk/conversation/local/test_client_tools_persistence.py",
+      "tests/sdk/llm/test_llm_json_storage.py"
+    ],
+    "production": [
+      "openhands-sdk/openhands/sdk/conversation/impl/local_conversation.py",
+      "openhands-sdk/openhands/sdk/llm/llm.py",
+      "openhands-sdk/openhands/sdk/llm/llm_profile_store.py",
+      "openhands-sdk/openhands/sdk/profiles/agent_profile_store.py"
+    ],
+    "source_sha256": {
+      "openhands-sdk/openhands/sdk/conversation/impl/local_conversation.py": "452dea0915b7b44e373e19460766f7950e2a32d4e218bc9f88ebb6cfe91857d5",
+      "openhands-sdk/openhands/sdk/llm/llm.py": "21a566643a4f6b1dde8156409b02715cf011818e4d332995c33a7f3c416347eb",
+      "openhands-sdk/openhands/sdk/llm/llm_profile_store.py": "8b196a73818e31b145dab2c1fa5b1d046f3c6b311f6160efe855569fe86d605b",
+      "openhands-sdk/openhands/sdk/profiles/agent_profile_store.py": "86478a7a14b6bd38985b5f133a2230cc9c44d2f4ad9a42c2c36528884c747aca",
+      "tests/sdk/conversation/local/test_client_tools_persistence.py": "06eec1891b4f5b9d29783b87dc2919aff029f94a19007a2e25d7c2ba4c107ecd",
+      "tests/sdk/llm/test_llm_json_storage.py": "0271372e8c774e44cad1c6b90f2a6796e7dca3af7f9bcf8ca8183cd74d1e926a"
+    },
+    "config_sha256": {
+      "pyproject.toml": "e461d50436dfa92ac04f02b441baa09916bc8c6a6580a07b48698e668957b0eb",
+      ".pre-commit-config.yaml": "724795ee85e39218f58912a2fb2b02576ec950aa9b7115210fc2927eaa05f15b",
+      "uv.lock": "58c8b04e867891f3d7671bb0c34e459d5de5fa61fb25e3c10f63ec57b1bdd02e"
+    }
+  },
+  "person": {
+    "name": "Jeeho Lee",
+    "email": "jeeholife2@gmail.com",
+    "date": "2026-10-25T08:30:16Z"
+  }
+}
