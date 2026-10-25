@@ -1,0 +1,63 @@
+{
+  "vllm": {
+    "repo": "vllm-project/vllm",
+    "number": 63469,
+    "head": "a0ada888b53b38403fb294c2e2e8234e8dfe6f39",
+    "parents": [
+      "0f71bbc740a9d2305baea64b68246e4c7d19f0e1",
+      "66bf931544202f159cf83c66a812826b7d5c84fb"
+    ],
+    "baseline": "66bf931544202f159cf83c66a812826b7d5c84fb",
+    "production": "vllm/benchmarks/sweep/plot.py",
+    "test_module": "tests/benchmarks/test_plot_filters.py",
+    "source_sha256": {
+      "vllm/benchmarks/sweep/plot.py": "a590b9d13ad2f13c35baedde30f1fa8eb2857b314ae76a604e6dbbfb3013b46c",
+      "tests/benchmarks/test_plot_filters.py": "b016aa216ce85fb041984b08fc5a52fcce16580406cf56bf7eefbbc6eed479b3",
+      "vllm/utils/argparse_utils.py": "f0ad2c5e6bac21e3b7369bcc92efcca624afd345e319d9fb367d8efbe72fbf71",
+      ".pre-commit-config.yaml": "6610adab075912e1bd0bb8075584bc0ae58e6412ded7007a102ab50ead1fcb4b",
+      "pyproject.toml": "7472ebabeb4b8d248c3afd1202808a84573ab7795bb8a1b7ae63e378d3c40df9",
+      "setup.py": "47fdd4a8cbffa723242729cd6874b332eb31e2d602055c123a8683ea6b7a00fd",
+      "tests/conftest.py": "89d56be0e67e6fa04babe567ab4168d1d6dc08224569f611891b4b53a1d63149",
+      "requirements/cpu.txt": "c768f765dd34629013eeeaf1af749e1d9c75516d4943d4da65ab342f7b6eab2f",
+      "requirements/build/cpu.txt": "301fcb9f2fa8088765b7a6cfbac4643280ef51658ced794e991bec62ba490d47",
+      "requirements/lint.txt": "86866422f67715efa1f81a6aca12827de773f02b7f0a969f8a37b8ce5f95f75a",
+      "requirements/common.txt": "0e7e3a4ca04f0eff75cb65123ae66223e4374aaaa6da0d42ca1a5c9ea0f2b0c8"
+    },
+    "source_blobs": {
+      "vllm/benchmarks/sweep/plot.py": "b52b348149ef17163c3253f754d423f74dbd76bc",
+      "tests/benchmarks/test_plot_filters.py": "5fc588cdca59b61b11e57c0dd86ec99dc7357771",
+      "vllm/utils/argparse_utils.py": "9028793ef8b9a82cd3e76429cac6d68de226940a",
+      ".pre-commit-config.yaml": "c940db4ae8445ff91e327f944308a3f1473d470f",
+      "pyproject.toml": "46c836043ca248fc5b50cb5f7ea1b3392219bf7a",
+      "setup.py": "cf99ec3aaaf4c37e0e400cb5f3aedf83453c6eba",
+      "tests/conftest.py": "ccc40724c4bb72f38f35e15e52d6466fa6da0312",
+      "requirements/cpu.txt": "2ae87a40eedaae0b3ace534f9e398f8e74290069",
+      "requirements/build/cpu.txt": "e9e03425f89b22fd1967159670359508e76a390e",
+      "requirements/lint.txt": "7d132113e0e204a4b38a55891d563022a7f4b1a3",
+      "requirements/common.txt": "d235d9e8bd818f5851eceb1a586911d8053cc90e"
+    },
+    "baseline_sha256": "7ad23b7f25c29e804c861dcdd39baefc81937b10507a15cc7bce6101ab232303"
+  },
+  "cmux": {
+    "repo": "manaflow-ai/cmux",
+    "number": 25081,
+    "head": "9721e0c2889e8274681e095ad8d296b2a44a4fdc",
+    "parents": [
+      "91f2976c551f4fd6fa618bf01c5366d40f7cc720"
+    ],
+    "baseline": "91f2976c551f4fd6fa618bf01c5366d40f7cc720",
+    "production": "tests/test_cmux_next_release_build_retention.py",
+    "test_module": "tests/test_cmux_next_release_build_retention.py",
+    "source_sha256": {
+      "tests/test_cmux_next_release_build_retention.py": "8faf228f881a859386c4a122d9469ea4c33fedbbc2992f7be487b44427bb4437",
+      ".github/workflows/cmux-next.yml": "cc21835c604ded4a9afb5bfea18dc8cb7701db87d4fd8559b38a8b147b7c4a87",
+      "scripts/cmux-next/release-derived-data-path.sh": "61dd6077aef251064847bc57ac7c12913965126228ebeb05b464b01105e26e15"
+    },
+    "source_blobs": {
+      "tests/test_cmux_next_release_build_retention.py": "c3e5c00dbff3e89bd3d7d1236b7b1abfc2560ae5",
+      ".github/workflows/cmux-next.yml": "f49ab1b8ee5a55257cc96be0454966fc4441cd6b",
+      "scripts/cmux-next/release-derived-data-path.sh": "489c502386494bb96c524f96aecbf4f53bd70ff1"
+    },
+    "baseline_sha256": "1fe2afbb58ee4e707f9d5e2101fe9a908f0f1904abb73d4faf775325da847192"
+  }
+}
