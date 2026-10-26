@@ -1,12 +1,11 @@
-name: October25 API reference create event diagnostic
+name: October25 existing default workflow dispatch diagnostic
 on:
-  push:
-    branches: ['ci/oct25b-mm-create-event-probe']
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
   event-only:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/ci/oct25b-mm-create-event-probe'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/ci/oct25b-mm-create-event-probe'
     runs-on: ubuntu-24.04
     timeout-minutes: 3
     steps:
@@ -18,5 +17,5 @@ jobs:
         run: |
           python3 - <<'PY'
           import json,os
-          print('OCT25B_CREATE_PROBE='+json.dumps({k:os.environ[k] for k in ['PROBE_EVENT','PROBE_REF','PROBE_HEAD']}))
+          print('OCT25B_DISPATCH_PROBE='+json.dumps({k:os.environ[k] for k in ['PROBE_EVENT','PROBE_REF','PROBE_HEAD']}))
           PY
