@@ -1,0 +1,14 @@
+{
+  "repo": "google/adk-python",
+  "base": "bf6739723c1b8b03bff8bb1e6ffada4d88098fcf",
+  "doc": "docs/guides/telemetry/telemetry_config/index.md",
+  "before": "605da87d81d062351ddc5debe798f20b959df7104982e19e1b38a4dea8405d8d",
+  "after": "f9f40ef9f3f07faf5fbeaa82833aac1f46f392cca1d56b68dd38cbf7ea525eb3",
+  "patch_sha256": "39fea31a06bb87c5bebc0fafc8c610ec517180da80c35ee010de95432967f03b",
+  "configs": {
+    "pyproject.toml": "dc4c73161198bce1ff1b42b7e0839505f59223eb8a78c07e990d40b25c58670c",
+    "tox.ini": "7eec9b6b133fc752f30a444e42d67689a38a1df08bfb8cb9ce49f28e30b6bfbf",
+    ".pre-commit-config.yaml": "c7d94b14a12db526d84110ffd762c91f0ba863bbc69413b09931857abd5ce149"
+  },
+  "commit_date": "2026-10-26T05:31:58Z"
+}
