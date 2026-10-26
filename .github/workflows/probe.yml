@@ -1,11 +1,12 @@
 name: October25 API reference create event diagnostic
 on:
-  create:
+  push:
+    branches: ['ci/oct25b-mm-create-event-probe']
 permissions:
   contents: read
 jobs:
   event-only:
-    if: github.event_name == 'create' && github.ref == 'refs/heads/ci/oct25b-mm-create-event-probe'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/ci/oct25b-mm-create-event-probe'
     runs-on: ubuntu-24.04
     timeout-minutes: 3
     steps:
