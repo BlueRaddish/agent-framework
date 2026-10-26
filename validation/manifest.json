@@ -1,0 +1,6 @@
+{
+  "repo": "manaflow-ai/cmux",
+  "base": "1b5a4b728a1cad0f7b5f1ccf7e128b4070e42013",
+  "patch_sha256": "9f5d6ea2b16999dd637723c2e5c9ac1eedd6031205f5b1947d6dd452f0d5a650",
+  "branch": "fix/oct25b-python-cancel-drain"
+}
