@@ -1,0 +1,29 @@
+name: October25 evening skills sample configuration
+on:
+  push:
+    branches: ['ci/oct25b-mm-skills-model-docs']
+permissions:
+  contents: read
+jobs:
+  ms-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/agent-framework
+          ref: 67ba500ec1fd312606a5d585a42335cd8631e851
+          fetch-depth: 1
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.13.5'
+          enable-cache: false
+      - run: python .ci-reviews/verify.py --source source --phase source

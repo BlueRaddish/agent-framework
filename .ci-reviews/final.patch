@@ -1,0 +1,26 @@
+diff --git a/python/samples/02-agents/skills/file_based_skill/README.md b/python/samples/02-agents/skills/file_based_skill/README.md
+index 15f7f227d77093aaea3f688b8d6b8fb9756c4a9c..a1186c84032b01f5ccaf495e69f83b8fe21564b6 100644
+--- a/python/samples/02-agents/skills/file_based_skill/README.md
++++ b/python/samples/02-agents/skills/file_based_skill/README.md
+@@ -48,7 +48,7 @@ file_based_skill/
+ Set the required environment variables in a `.env` file (see `python/.env.example`):
+ 
+ - `FOUNDRY_PROJECT_ENDPOINT`: Your Microsoft Foundry project endpoint
+-- `AZURE_OPENAI_MODEL`: The name of your model deployment (defaults to `gpt-4o-mini`)
++- `FOUNDRY_MODEL`: The name of your model deployment (defaults to `gpt-4o-mini`)
+ 
+ ### Authentication
+ 
+diff --git a/python/samples/02-agents/skills/mixed_skills/README.md b/python/samples/02-agents/skills/mixed_skills/README.md
+index 3b6832827e20c4ff36f863120a6f74e9ccc77fc7..92851f6ea7f4b9ece9c1ef84ef7e6d511c6106e2 100644
+--- a/python/samples/02-agents/skills/mixed_skills/README.md
++++ b/python/samples/02-agents/skills/mixed_skills/README.md
+@@ -79,7 +79,7 @@ Set environment variables (or create a `.env` file):
+ 
+ ```
+ FOUNDRY_PROJECT_ENDPOINT=https://your-project.openai.azure.com/
+-AZURE_OPENAI_MODEL=gpt-4o-mini
++FOUNDRY_MODEL=gpt-4o-mini
+ ```
+ 
+ Authenticate with Azure CLI:

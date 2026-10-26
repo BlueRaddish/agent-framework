@@ -1,0 +1,29 @@
+{
+  "scope": "ms-oct25b-skills-model-docs",
+  "base": "67ba500ec1fd312606a5d585a42335cd8631e851",
+  "files": [
+    "python/samples/02-agents/skills/file_based_skill/README.md",
+    "python/samples/02-agents/skills/mixed_skills/README.md"
+  ],
+  "before": {
+    "python/samples/02-agents/skills/file_based_skill/README.md": "255e7fd2c983502106ae0ab6d64d110d71735237c3bccef3ceefb4536f2dc011",
+    "python/samples/02-agents/skills/mixed_skills/README.md": "0547e05cb8bdccc454487238dfd967e458200ace403ae12b585bcdd925244684"
+  },
+  "after": {
+    "python/samples/02-agents/skills/file_based_skill/README.md": "f16f613667180ebc503414d55a2ea85dd318a8c4df03de0cab2f6238e3f2b52d",
+    "python/samples/02-agents/skills/mixed_skills/README.md": "eee570c0ad199304a310da91e833a673d8adaa765539d97a6f4eb531cf608cd4"
+  },
+  "source_sha256": {
+    "python/samples/02-agents/skills/file_based_skill/file_based_skill.py": "5e64a067fd2bce33bd123661bdb31459a944a065feee45586a2423bf4d67803e",
+    "python/samples/02-agents/skills/mixed_skills/mixed_skills.py": "bd4862616d432ad9555409258e4401fbe9982499d26da7dac4798ee3e09fadb4"
+  },
+  "config_sha256": {
+    "python/pyproject.toml": "5e39f282c512615b1322ccbdc60f0c631078d2c5e766032ab29be20f283a8f3d",
+    "python/uv.lock": "1feda3beb72875cdb72bf6dea3f446b4f5a85ee3df23fce9ea586c6d136da86e",
+    "python/.pre-commit-config.yaml": "442f3355bdae9654b1e00fe901a0350d887e634dbb0f44f62b9c64ffd9016450",
+    "python/scripts/workspace_poe_tasks.py": "e2ea30c99324cf89ee465d7b2e5189b19eed006069090d5275e8055cb5f63801"
+  },
+  "patch_sha256": "2b8b3b541d1be8eeac3aee7d2ba7e7de065e702b1d4918399bd8b38bef3a79c7",
+  "title": "Python: Correct model environment variable in skills sample guides",
+  "commit_date": "2026-10-26T05:26:06.409360+00:00"
+}
